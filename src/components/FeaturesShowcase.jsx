@@ -3,12 +3,14 @@ import {
   Calendar, CheckSquare, Mail, IndianRupee, Users, 
   FileText, Search, MessageSquare, Bell, ArrowRight, 
   Sparkles, Upload, Clock, AlertCircle, CheckCircle, ShieldCheck,
-  ChevronRight, RefreshCw, Smartphone, Eye
+  ChevronRight, RefreshCw, Smartphone, Eye, ExternalLink, ArrowUpRight
 } from 'lucide-react';
 import Card3D from './shared/Card3D';
+import FeatureModal from './FeatureModal';
 
 export default function FeaturesShowcase() {
   const [activeTab, setActiveTab] = useState('academic');
+  const [activeModal, setActiveModal] = useState(null);
   const [taskCompleted, setTaskCompleted] = useState(false);
   const [splitAmount, setSplitAmount] = useState(800);
   const [studentCount, setStudentCount] = useState(4);
@@ -600,7 +602,271 @@ export default function FeaturesShowcase() {
             </div>
           </div>
         </div>
+
+        {/* 6 Clickable 3D Spatial Feature Panels (NOT just static cards!) */}
+        <div className="mt-24 space-y-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              INTERACTIVE 3D DASHBOARDS • CLICK TO LAUNCH
+            </div>
+            <h3 className="font-['Syncopate'] text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white leading-tight">
+              DEEP DIVE INTO THE COCKPIT
+            </h3>
+            <p className="mt-3 text-xs sm:text-sm text-zinc-400 font-light">
+              Every panel is backed by live data logic. Click any feature card below to open its floating cockpit modal with real calculations and actionable controls.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* 1. Campus Spends & Budget */}
+            <Card3D
+              depth={10}
+              onClick={() => setActiveModal('finance')}
+              className="p-6 bg-gradient-to-b from-[#0e0e1a] to-[#07070e] border-white/15 hover:border-white/40 cursor-pointer transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[0_0_35px_rgba(255,255,255,0.12)]"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <IndianRupee className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-emerald-400/20 text-emerald-300 border border-emerald-400/30">
+                    LIVE MATH
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-bold text-white uppercase tracking-wider font-['Syncopate'] group-hover:text-glow transition-all">
+                    Finance & Spends
+                  </h4>
+                  <p className="text-xs text-zinc-300 font-light mt-1.5 leading-relaxed">
+                    Natural language logging: "Spent ₹180 at Food Street". Automated category splits, peer ledgers, and end-of-month runway pacing.
+                  </p>
+                </div>
+
+                {/* Real Data Highlight */}
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/05 space-y-1 font-mono text-xs">
+                  <div className="flex items-center justify-between text-zinc-400 text-[11px]">
+                    <span>SPENT TO DATE:</span>
+                    <span className="text-white font-bold">₹8,420</span>
+                  </div>
+                  <div className="flex items-center justify-between text-emerald-400 text-[11px]">
+                    <span>REMAINING:</span>
+                    <span className="font-bold">₹11,580</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/05 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                <span>Launch Finance Cockpit</span>
+                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </Card3D>
+
+            {/* 2. Timetable & 75% Attendance */}
+            <Card3D
+              depth={10}
+              onClick={() => setActiveModal('academic')}
+              className="p-6 bg-gradient-to-b from-[#0e0e1a] to-[#07070e] border-white/15 hover:border-white/40 cursor-pointer transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[0_0_35px_rgba(255,255,255,0.12)]"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <Calendar className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-blue-400/20 text-blue-300 border border-blue-400/30">
+                    OCR & SCHEDULE
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-bold text-white uppercase tracking-wider font-['Syncopate'] group-hover:text-glow transition-all">
+                    Timetable & Attendance
+                  </h4>
+                  <p className="text-xs text-zinc-300 font-light mt-1.5 leading-relaxed">
+                    Upload your class timetable photo. Instant OCR extraction into your calendar with 75% attendance threshold arbitration and bunk safety checks.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/05 space-y-1 font-mono text-xs">
+                  <div className="flex items-center justify-between text-zinc-400 text-[11px]">
+                    <span>DBMS ATTENDANCE:</span>
+                    <span className="text-amber-300 font-bold">76% (1 bunk left)</span>
+                  </div>
+                  <div className="flex items-center justify-between text-emerald-400 text-[11px]">
+                    <span>OS ATTENDANCE:</span>
+                    <span className="font-bold">88% (Safe)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/05 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                <span>Launch Schedule Matrix</span>
+                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </Card3D>
+
+            {/* 3. Deadlines & Priority Tasks */}
+            <Card3D
+              depth={10}
+              onClick={() => setActiveModal('tasks')}
+              className="p-6 bg-gradient-to-b from-[#0e0e1a] to-[#07070e] border-white/15 hover:border-white/40 cursor-pointer transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[0_0_35px_rgba(255,255,255,0.12)]"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <CheckSquare className="w-5 h-5 text-rose-400" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-rose-400/20 text-rose-300 border border-rose-400/30">
+                    CRITICAL PATH
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-bold text-white uppercase tracking-wider font-['Syncopate'] group-hover:text-glow transition-all">
+                    Tasks & Deadlines
+                  </h4>
+                  <p className="text-xs text-zinc-300 font-light mt-1.5 leading-relaxed">
+                    Auto-labeled "Extremely Important". Smart study sprint blocks fitted inside free periods, with gentle reminders at T-24h, T-6h, and T-1h.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/05 space-y-1 font-mono text-xs">
+                  <div className="flex items-center justify-between text-rose-300 text-[11px]">
+                    <span>URGENT DEADLINE:</span>
+                    <span className="font-bold">DSA Lab #4</span>
+                  </div>
+                  <div className="text-[10px] text-zinc-400">Due Tomorrow • 11:59 PM</div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/05 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                <span>Launch Task Cockpit</span>
+                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </Card3D>
+
+            {/* 4. University Gmail Notice Distiller */}
+            <Card3D
+              depth={10}
+              onClick={() => setActiveModal('email')}
+              className="p-6 bg-gradient-to-b from-[#0e0e1a] to-[#07070e] border-white/15 hover:border-white/40 cursor-pointer transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[0_0_35px_rgba(255,255,255,0.12)]"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <Mail className="w-5 h-5 text-amber-400" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                    SEMANTIC
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-bold text-white uppercase tracking-wider font-['Syncopate'] group-hover:text-glow transition-all">
+                    Gmail Distiller
+                  </h4>
+                  <p className="text-xs text-zinc-300 font-light mt-1.5 leading-relaxed">
+                    Long, confusing 400-word university circulars distilled into 3 concise bullet points with deadline extraction and direct portal action buttons.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/05 space-y-1 font-mono text-xs">
+                  <div className="text-zinc-300 text-[11px] font-semibold">Mid-Sem Registration</div>
+                  <div className="text-[10px] text-zinc-400">Compressed: 420 words → 3 action items</div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/05 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                <span>Launch Notice Distiller</span>
+                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </Card3D>
+
+            {/* 5. Borrow & Lend Campus Ledger */}
+            <Card3D
+              depth={10}
+              onClick={() => setActiveModal('borrow')}
+              className="p-6 bg-gradient-to-b from-[#0e0e1a] to-[#07070e] border-white/15 hover:border-white/40 cursor-pointer transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[0_0_35px_rgba(255,255,255,0.12)]"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <Users className="w-5 h-5 text-purple-400" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-purple-400/20 text-purple-300 border border-purple-400/30">
+                    TRANSPARENT LEDGER
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-bold text-white uppercase tracking-wider font-['Syncopate'] group-hover:text-glow transition-all">
+                    Borrow & Lend
+                  </h4>
+                  <p className="text-xs text-zinc-300 font-light mt-1.5 leading-relaxed">
+                    Track who owes what with zero awkwardness. Instant split calculation, automated polite reminders, and 1-tap UPI integration.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/05 space-y-1 font-mono text-xs">
+                  <div className="flex items-center justify-between text-emerald-400 text-[11px]">
+                    <span>NET RECEIVABLE:</span>
+                    <span className="font-bold">+₹600</span>
+                  </div>
+                  <div className="text-[10px] text-zinc-400">Rahul owes ₹300 • Priya owes ₹450</div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/05 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                <span>Launch Debt Ledger</span>
+                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </Card3D>
+
+            {/* 6. NIA Native AI Companion */}
+            <Card3D
+              depth={10}
+              onClick={() => setActiveModal('chat')}
+              className="p-6 bg-gradient-to-b from-[#0e0e1a] to-[#07070e] border-white/15 hover:border-white/40 cursor-pointer transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[0_0_35px_rgba(255,255,255,0.12)]"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <Sparkles className="w-5 h-5 text-teal-400" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-teal-400/20 text-teal-300 border border-teal-400/30">
+                    DUAL ENGINE
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-bold text-white uppercase tracking-wider font-['Syncopate'] group-hover:text-glow transition-all">
+                    NIA AI Companion
+                  </h4>
+                  <p className="text-xs text-zinc-300 font-light mt-1.5 leading-relaxed">
+                    Always student-contextual. Knows your schedule, friends, pending fees, and academic calendar without endless manual explaining.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/05 space-y-1 font-mono text-xs">
+                  <div className="text-teal-300 text-[11px] font-semibold">Gemini 1.5 Pro Cloud + Offline Cache</div>
+                  <div className="text-[10px] text-zinc-400">Sub-10ms query responses</div>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/05 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                <span>Launch AI Console</span>
+                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </Card3D>
+          </div>
+        </div>
       </div>
+
+      {/* Interactive Modal Root */}
+      {activeModal && (
+        <FeatureModal featureId={activeModal} onClose={() => setActiveModal(null)} />
+      )}
     </section>
   );
 }

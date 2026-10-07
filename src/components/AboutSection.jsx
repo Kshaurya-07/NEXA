@@ -108,16 +108,26 @@ export default function AboutSection() {
                   <span>FOUNDATION:</span>
                   <span className="text-zinc-300">Privacy-First • Zero Ad Tech</span>
                 </div>
-                <div className="pt-2">
+                <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <a
                     href="https://github.com/Kshaurya-07/NEXA"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/05 hover:bg-white/10 border border-white/10 text-xs font-mono text-zinc-300 hover:text-white transition-all"
+                    className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/05 hover:bg-white/10 border border-white/10 text-xs font-mono text-zinc-300 hover:text-white transition-all text-center"
                   >
-                    <Github className="w-4 h-4" />
-                    <span>View NEXA on GitHub</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <Github className="w-3.5 h-3.5 shrink-0" />
+                    <span>NEXA Repo</span>
+                    <ArrowUpRight className="w-3 h-3 shrink-0" />
+                  </a>
+                  <a
+                    href="https://github.com/kunal4060/GLITCHERS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/05 hover:bg-white/10 border border-white/10 text-xs font-mono text-zinc-300 hover:text-white transition-all text-center"
+                  >
+                    <Github className="w-3.5 h-3.5 shrink-0" />
+                    <span>Team Glitchers</span>
+                    <ArrowUpRight className="w-3 h-3 shrink-0" />
                   </a>
                 </div>
               </div>

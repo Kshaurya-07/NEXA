@@ -92,26 +92,37 @@ export default function NexaAppIntro() {
           <Card3D depth={10} className="p-6 sm:p-8 bg-[#090912]/90 border-white/20 shadow-2xl">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/25 flex items-center justify-center shrink-0 text-white shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                  <Smartphone className="w-7 h-7" />
+                <div className="w-14 h-14 rounded-2xl bg-black/80 border border-white/25 flex items-center justify-center shrink-0 p-2 text-white shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                  <img
+                    src="/logo.png"
+                    alt="NEXA App Official Logo"
+                    className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white uppercase tracking-wider font-['Syncopate']">
-                    Calm, Native, Spatial Architecture
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-bold text-white uppercase tracking-wider font-['Syncopate']">
+                      NEXA Cockpit
+                    </h3>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-white border border-white/20">
+                      Nexa Assistant AI
+                    </span>
+                  </div>
                   <p className="text-xs sm:text-sm text-zinc-400 font-light mt-1">
                     Zero endless scrolling feeds. Zero notifications without purpose. Sub-10ms offline local search.
                   </p>
                 </div>
               </div>
 
-              <a
-                href="#features"
-                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:scale-105"
-              >
-                <span>Interactive 3D Preview</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              <div className="flex items-center gap-3 shrink-0">
+                <a
+                  href="#features"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:scale-105"
+                >
+                  <span>Interactive 3D Cockpit</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </Card3D>
         </div>

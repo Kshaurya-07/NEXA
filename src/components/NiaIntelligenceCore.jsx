@@ -123,13 +123,17 @@ export default function NiaIntelligenceCore() {
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
                         isCore
-                          ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.6)]'
+                          ? 'bg-black/90 border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.4)] p-1'
                           : isSelected
                           ? 'bg-white text-black'
                           : 'bg-white/05 text-zinc-300 group-hover:text-white'
                       }`}
                     >
-                      <Icon className="w-5 h-5" />
+                      {isCore ? (
+                        <img src="/logo.png" alt="NIA Core" className="w-full h-full object-contain filter drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]" />
+                      ) : (
+                        <Icon className="w-5 h-5" />
+                      )}
                     </div>
                   </div>
 

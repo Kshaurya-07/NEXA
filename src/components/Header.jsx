@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Menu, X, ArrowUpRight, Cpu, Download } from 'lucide-react';
 
+const OFFICIAL_DOWNLOAD_URL = "https://drive.google.com/drive/folders/1FTWEF3Nv-DdVrEB-r9dI_ydVPCRpv3xD";
+
 export default function Header() {
   const [activeSection, setActiveSection] = useState('nia');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,18 +65,21 @@ export default function Header() {
             <a
               href="#nia"
               onClick={(e) => scrollToSection(e, '#nia')}
-              className="flex items-center gap-2.5 group cursor-pointer"
+              className="flex items-center gap-3 group cursor-pointer"
             >
-              <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center transition-transform group-hover:scale-105 group-hover:border-white/40">
-                <div className="w-3.5 h-3.5 bg-white rounded-sm rotate-45 flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+              <div className="w-9 h-9 rounded-xl overflow-hidden bg-black/60 border border-white/20 p-1 flex items-center justify-center transition-transform group-hover:scale-105 group-hover:border-white/50 shadow-[0_0_15px_rgba(255,255,255,0.15)]">
+                <img
+                  src="/logo.png"
+                  alt="NEXA Brand Logo"
+                  className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+                />
               </div>
-              <div className="flex flex-col">
-                <span className="font-['Syncopate'] text-base font-bold tracking-[0.22em] text-white group-hover:text-glow transition-all">
+              <div className="flex flex-col text-left">
+                <span className="font-['Syncopate'] text-base font-bold tracking-[0.24em] text-white group-hover:text-glow transition-all">
                   NEXA
                 </span>
-                <span className="text-[9px] uppercase tracking-[0.28em] text-zinc-400 font-mono -mt-0.5 flex items-center gap-1">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  VIA NIA
+                <span className="text-[9px] uppercase tracking-[0.18em] text-zinc-400 font-mono -mt-0.5">
+                  Nexa Assistant AI
                 </span>
               </div>
             </a>
@@ -106,8 +111,9 @@ export default function Header() {
             {/* Right Action CTA */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="#download"
-                onClick={(e) => scrollToSection(e, '#download')}
+                href={OFFICIAL_DOWNLOAD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-200 shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_25px_rgba(255,255,255,0.45)] hover:scale-[1.02]"
               >
                 <Download className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
@@ -118,11 +124,12 @@ export default function Header() {
             {/* Mobile Hamburger Button */}
             <div className="flex md:hidden items-center gap-2">
               <a
-                href="#download"
-                onClick={(e) => scrollToSection(e, '#download')}
+                href={OFFICIAL_DOWNLOAD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-white text-black"
               >
-                GET NEXA
+                DOWNLOAD NEXA
               </a>
               <button
                 type="button"
@@ -163,8 +170,10 @@ export default function Header() {
 
           <div className="pt-6 border-t border-white/10">
             <a
-              href="#download"
-              onClick={(e) => scrollToSection(e, '#download')}
+              href={OFFICIAL_DOWNLOAD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold uppercase tracking-wider text-sm bg-white text-black shadow-lg"
             >
               <Download className="w-4 h-4" />

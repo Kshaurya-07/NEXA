@@ -14,9 +14,9 @@ export default function NiaTwoWays() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
-            DUAL-ENGINE COGNITION
+            01 · DUAL-ENGINE COGNITION
           </div>
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             ONE ASSISTANT. <br />
             <span className="text-zinc-400">TWO WAYS TO THINK.</span>
           </h2>

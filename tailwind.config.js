@@ -8,6 +8,12 @@ export default {
     extend: {
       colors: {
         background: '#050508',
+        accent: {
+          DEFAULT: '#8B5CF6',
+          light: '#A78BFA',
+          dark: '#7C3AED',
+          soft: 'rgba(139, 92, 246, 0.14)',
+        },
         surface: {
           50: '#18181f',
           100: '#131318',

@@ -74,9 +74,24 @@ export default function FeaturesShowcase() {
             SPATIAL PRODUCT ENGINE
           </div>
 
-          <h2 className="font-['Syncopate'] text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-white leading-tight">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-white leading-tight">
             NEXA IN 3D SPACE
           </h2>
+          {/* Stat callouts */}
+          <div className="mt-10 grid grid-cols-3 gap-3 max-w-2xl mx-auto">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-5">
+              <div className="text-2xl sm:text-3xl font-bold text-violet-300">12+</div>
+              <div className="mt-1 text-[11px] font-mono uppercase tracking-widest text-zinc-400">AI capabilities</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-5">
+              <div className="text-2xl sm:text-3xl font-bold text-violet-300">02</div>
+              <div className="mt-1 text-[11px] font-mono uppercase tracking-widest text-zinc-400">Cognitive engines</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-5">
+              <div className="text-2xl sm:text-3xl font-bold text-violet-300">100%</div>
+              <div className="mt-1 text-[11px] font-mono uppercase tracking-widest text-zinc-400">Offline-ready</div>
+            </div>
+          </div>
 
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-light">
             Every feature is alive. Interact with the 3D mobile cockpit below to see real-time data calculations, autonomous OCR, and live task dispatch.
@@ -115,7 +130,7 @@ export default function FeaturesShowcase() {
                 <div className="inline-block font-mono text-[10px] text-zinc-400 uppercase tracking-widest px-2.5 py-1 rounded bg-white/05 border border-white/10">
                   AUTONOMOUS TIMETABLE REASONING
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Syncopate']">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Space_Grotesk'] font-semibold">
                   Instant Schedule OCR
                 </h3>
                 <p className="text-sm text-zinc-300 font-light leading-relaxed">
@@ -151,7 +166,7 @@ export default function FeaturesShowcase() {
                 <div className="inline-block font-mono text-[10px] text-zinc-400 uppercase tracking-widest px-2.5 py-1 rounded bg-white/05 border border-white/10">
                   CRITICAL PATH DISPATCHER
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Syncopate']">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Space_Grotesk'] font-semibold">
                   Deadlines & Priority
                 </h3>
                 <p className="text-sm text-zinc-300 font-light leading-relaxed">
@@ -186,7 +201,7 @@ export default function FeaturesShowcase() {
                 <div className="inline-block font-mono text-[10px] text-zinc-400 uppercase tracking-widest px-2.5 py-1 rounded bg-white/05 border border-white/10">
                   GMAIL COGNITIVE COMPRESSOR
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Syncopate']">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Space_Grotesk'] font-semibold">
                   Zero Academic Fluff
                 </h3>
                 <p className="text-sm text-zinc-300 font-light leading-relaxed">
@@ -221,7 +236,7 @@ export default function FeaturesShowcase() {
                 <div className="inline-block font-mono text-[10px] text-zinc-400 uppercase tracking-widest px-2.5 py-1 rounded bg-white/05 border border-white/10">
                   CAMPUS SPLIT & LEDGER
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Syncopate']">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Space_Grotesk'] font-semibold">
                   Natural Spend & Split
                 </h3>
                 <p className="text-sm text-zinc-300 font-light leading-relaxed">
@@ -288,7 +303,7 @@ export default function FeaturesShowcase() {
                 <div className="inline-block font-mono text-[10px] text-zinc-400 uppercase tracking-widest px-2.5 py-1 rounded bg-white/05 border border-white/10">
                   CONTEXTUAL STUDENT COMPANION
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Syncopate']">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Space_Grotesk'] font-semibold">
                   NIA Native AI Chat
                 </h3>
                 <p className="text-sm text-zinc-300 font-light leading-relaxed">
@@ -313,7 +328,7 @@ export default function FeaturesShowcase() {
                 <div className="inline-block font-mono text-[10px] text-zinc-400 uppercase tracking-widest px-2.5 py-1 rounded bg-white/05 border border-white/10">
                   SMART NOTIFICATION STACK
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Syncopate']">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Space_Grotesk'] font-semibold">
                   Gentle Proactive Alerts
                 </h3>
                 <p className="text-sm text-zinc-300 font-light leading-relaxed">

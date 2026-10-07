@@ -14,6 +14,7 @@ import AboutSection from './components/AboutSection';
 import DownloadSection from './components/DownloadSection';
 import Footer from './components/Footer';
 import FloatingAssistantWidget from './components/FloatingAssistantWidget';
+import ScrollProgress from './components/ScrollProgress';
 import BackgroundNetwork from './components/shared/BackgroundNetwork';
 
 export default function App() {
@@ -24,6 +25,9 @@ export default function App() {
 
       {/* Floating Sticky Glass Header */}
       <Header />
+
+      {/* Scroll progress + back-to-top */}
+      <ScrollProgress />
 
       {/* Content strictly adhering to the requested storytelling order */}
       <main className="relative z-10">

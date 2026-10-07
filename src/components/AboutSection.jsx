@@ -46,18 +46,18 @@ export default function AboutSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-left max-w-4xl mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4 backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             ENGINEERING & VISION
           </div>
           
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
             BUILT BY <br />
             <span className="text-zinc-400 font-light text-glow">TEAM GLITCHERS</span>
           </h2>
 
-          <p className="mt-6 text-base sm:text-lg md:text-xl text-zinc-300 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-6 text-base sm:text-lg md:text-xl text-zinc-300 font-light leading-relaxed max-w-2xl">
             “Technology designed around the way students actually live, learn and manage their day.”
           </p>
 
@@ -80,7 +80,7 @@ export default function AboutSection() {
                     </div>
                     <div>
                       <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">COLLECTIVE</span>
-                      <h3 className="text-base font-bold text-white tracking-wider font-['Syncopate']">TEAM GLITCHERS</h3>
+                      <h3 className="text-base font-bold text-white tracking-wider font-['Space_Grotesk'] font-semibold">TEAM GLITCHERS</h3>
                     </div>
                   </div>
                   <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/10 text-white border border-white/20">
@@ -180,7 +180,7 @@ export default function AboutSection() {
                   <Compass className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white uppercase tracking-wider font-['Syncopate']">
+                  <div className="text-xs font-bold text-white uppercase tracking-wider font-['Space_Grotesk'] font-semibold">
                     The Glitchers Philosophy
                   </div>
                   <p className="text-xs text-zinc-400 font-light mt-0.5">

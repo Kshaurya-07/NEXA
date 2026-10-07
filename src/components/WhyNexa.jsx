@@ -29,11 +29,11 @@ export default function WhyNexa() {
     <section className="py-20 md:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-left max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
             THE STUDENT REALITY
           </div>
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             WHY NEXA EXISTS
           </h2>
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-light">
@@ -42,8 +42,8 @@ export default function WhyNexa() {
           </p>
 
           {/* Core Mantra Quote */}
-          <div className="mt-10 p-6 rounded-2xl bg-white/[0.03] border border-white/10 max-w-xl mx-auto">
-            <div className="font-['Syncopate'] text-lg sm:text-xl font-bold tracking-wider text-white uppercase space-y-1">
+          <div className="mt-10 p-6 rounded-2xl bg-white/[0.03] border border-white/10 max-w-xl">
+            <div className="font-['Space_Grotesk'] font-semibold text-lg sm:text-xl font-bold tracking-wider text-white uppercase space-y-1">
               <div>LESS REMEMBERING.</div>
               <div>LESS SEARCHING.</div>
               <div>LESS SWITCHING.</div>

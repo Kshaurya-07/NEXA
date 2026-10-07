@@ -87,12 +87,12 @@ export default function EverythingConnected() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
             THE CONNECTED GRAPH
           </div>
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
             EVERYTHING IS CONNECTED
           </h2>
 
           <div className="mt-6 p-4 rounded-xl bg-white/[0.03] border border-white/10 max-w-xl mx-auto">
-            <p className="font-['Syncopate'] text-base sm:text-lg font-bold text-white uppercase tracking-wider">
+            <p className="font-['Space_Grotesk'] font-semibold text-base sm:text-lg font-bold text-white uppercase tracking-wider">
               "ONE PIECE OF INFORMATION. <br />
               <span className="text-zinc-400">MULTIPLE USEFUL ACTIONS."</span>
             </p>
@@ -103,11 +103,27 @@ export default function EverythingConnected() {
           </p>
 
           {/* Interactive Trigger Button */}
+          {/* Stat callouts */}
+          <div className="mt-8 grid grid-cols-3 gap-3 max-w-xl mx-auto">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+              <div className="text-xl sm:text-2xl font-bold text-violet-300">06</div>
+              <div className="mt-1 text-[10px] font-mono uppercase tracking-widest text-zinc-400">Modules linked</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+              <div className="text-xl sm:text-2xl font-bold text-violet-300">01</div>
+              <div className="mt-1 text-[10px] font-mono uppercase tracking-widest text-zinc-400">Email trigger</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+              <div className="text-xl sm:text-2xl font-bold text-violet-300">00</div>
+              <div className="mt-1 text-[10px] font-mono uppercase tracking-widest text-zinc-400">Buttons pressed</div>
+            </div>
+          </div>
+
           <div className="mt-8 flex justify-center">
             <button
               onClick={handleRunCascade}
               disabled={isPlaying}
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.3)] disabled:opacity-50"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-violet-500 text-white hover:bg-violet-400 transition-all shadow-[0_0_25px_rgba(139,92,246,0.45)] disabled:opacity-50"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               <span>{isPlaying ? 'Executing Autonomous Cascade...' : 'Simulate Email → Action Cascade'}</span>

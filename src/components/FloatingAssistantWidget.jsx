@@ -42,7 +42,7 @@ export default function FloatingAssistantWidget() {
           className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-black/90 border border-white/20 text-white shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_20px_rgba(255,255,255,0.15)] hover:border-white/40 hover:scale-105 transition-all duration-300 backdrop-blur-xl"
           aria-label="Open Floating NEXA Assistant"
         >
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping motion-reduce:animate-none" />
           <div className="w-5 h-5 rounded-md bg-white/10 flex items-center justify-center">
             <Sparkles className="w-3 h-3 text-white" />
           </div>
@@ -61,7 +61,7 @@ export default function FloatingAssistantWidget() {
           {/* Top Bar */}
           <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse motion-reduce:animate-none" />
               <span className="font-mono text-xs uppercase font-bold text-white tracking-wider">
                 NIA FLOATING HUD
               </span>

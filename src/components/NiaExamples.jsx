@@ -65,7 +65,7 @@ export default function NiaExamples() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
             REAL-WORLD INTELLIGENCE
           </div>
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             NIA IN ACTION
           </h2>
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-light">

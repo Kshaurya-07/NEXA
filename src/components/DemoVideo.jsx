@@ -14,7 +14,7 @@ export default function DemoVideo() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
             PRODUCT WALKTHROUGH
           </div>
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             SEE NEXA IN ACTION
           </h2>
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-light">
@@ -67,7 +67,7 @@ export default function DemoVideo() {
                   </div>
 
                   <div className="relative z-10 mt-5 text-center">
-                    <div className="font-['Syncopate'] text-base sm:text-lg font-bold text-white uppercase tracking-wider">
+                    <div className="font-['Space_Grotesk'] font-semibold text-base sm:text-lg font-bold text-white uppercase tracking-wider">
                       PLAY OFFICIAL DEMO
                     </div>
                     <div className="text-xs text-zinc-400 font-mono mt-1">

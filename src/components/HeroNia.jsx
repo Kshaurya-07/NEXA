@@ -7,7 +7,7 @@ export default function HeroNia() {
   return (
     <section id="nia" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Cinematic 3D Ambient Lighting Spheres */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-white/[0.05] via-white/[0.01] to-transparent rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180vw] md:w-[900px] h-[500px] bg-gradient-to-b from-white/[0.05] via-white/[0.01] to-transparent rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-white/[0.02] rounded-full blur-[90px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-white/[0.02] rounded-full blur-[90px] pointer-events-none" />
 
@@ -57,7 +57,7 @@ export default function HeroNia() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="#nexa-app"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-105"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-violet-500 text-white hover:bg-violet-400 transition-all shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:scale-105"
             >
               <span>Explore NEXA Architecture</span>
               <ArrowRight className="w-4 h-4" />

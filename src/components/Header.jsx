@@ -95,7 +95,7 @@ export default function Header() {
                     }`}
                   >
                     {isActive && (
-                      <span className="absolute inset-0 bg-white/10 border border-white/15 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.1)] -z-10" />
+                      <span className="absolute inset-0 bg-violet-500/15 border border-violet-400/40 rounded-full shadow-[0_0_15px_rgba(139,92,246,0.35)] -z-10" />
                     )}
                     {item.name}
                   </a>
@@ -108,7 +108,7 @@ export default function Header() {
               <a
                 href="#download"
                 onClick={(e) => scrollToSection(e, '#download')}
-                className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-200 shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_25px_rgba(255,255,255,0.45)] hover:scale-[1.02]"
+                className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-violet-500 text-white hover:bg-violet-400 transition-all duration-200 shadow-[0_0_20px_rgba(139,92,246,0.45)] hover:shadow-[0_0_25px_rgba(139,92,246,0.65)] hover:scale-[1.02]"
               >
                 <Download className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
                 <span>DOWNLOAD NEXA</span>
@@ -120,7 +120,7 @@ export default function Header() {
               <a
                 href="#download"
                 onClick={(e) => scrollToSection(e, '#download')}
-                className="px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-white text-black"
+                className="px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-violet-500 text-white shadow-[0_0_15px_rgba(139,92,246,0.5)]"
               >
                 GET NEXA
               </a>
@@ -151,7 +151,7 @@ export default function Header() {
                 onClick={(e) => scrollToSection(e, item.href)}
                 className={`flex items-center justify-between p-3.5 rounded-xl border transition-all ${
                   activeSection === item.id
-                    ? 'bg-white/10 border-white/30 text-white'
+                    ? 'bg-violet-500/15 border-violet-400/40 text-white'
                     : 'bg-white/[0.02] border-white/05 text-zinc-300 hover:bg-white/[0.05]'
                 }`}
               >
@@ -165,7 +165,7 @@ export default function Header() {
             <a
               href="#download"
               onClick={(e) => scrollToSection(e, '#download')}
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold uppercase tracking-wider text-sm bg-white text-black shadow-lg"
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold uppercase tracking-wider text-sm bg-violet-500 text-white hover:bg-violet-400 shadow-[0_0_20px_rgba(139,92,246,0.45)]"
             >
               <Download className="w-4 h-4" />
               DOWNLOAD NEXA FOR ANDROID

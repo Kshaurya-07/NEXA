@@ -5,8 +5,13 @@ export default function Card3D({ children, className = '', depth = 12, glare = t
   const [transform, setTransform] = useState('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50, opacity: 0 });
 
+  const tiltDisabled =
+    typeof window !== 'undefined' &&
+    (window.matchMedia('(pointer: coarse)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
   const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
+    if (!cardRef.current || tiltDisabled) return;
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;

@@ -13,8 +13,14 @@ export default function BackgroundNetwork() {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Particle nodes definition
-    const particleCount = Math.min(Math.floor((width * height) / 18000), 75);
+    const isMobileView =
+      window.innerWidth < 768 ||
+      window.matchMedia('(pointer: coarse)').matches;
+
+    // Particle nodes definition (fewer on mobile for performance)
+    const particleCount = isMobileView
+      ? 22
+      : Math.min(Math.floor((width * height) / 18000), 75);
     const particles = [];
     const mouse = { x: null, y: null, radius: 120 };
 
@@ -102,7 +108,10 @@ export default function BackgroundNetwork() {
         }
       }
 
-      animationFrameId = requestAnimationFrame(render);
+      // Mobile: render one static frame only (no animation loop)
+      if (!isMobileView) {
+        animationFrameId = requestAnimationFrame(render);
+      }
     };
 
     render();

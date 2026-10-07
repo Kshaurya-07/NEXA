@@ -6,41 +6,40 @@ import Card3D from './shared/Card3D';
 export default function DownloadSection() {
   const [showQrModal, setShowQrModal] = useState(false);
   const [downloadTriggered, setDownloadTriggered] = useState(false);
+  const [isMobileDevice] = useState(
+    () =>
+      typeof window !== 'undefined' &&
+      (window.matchMedia('(pointer: coarse)').matches ||
+        /Android|iPhone|iPad|iPod|Mobile/i.test(window.navigator.userAgent))
+  );
+
+  const APK_DRIVE_URL = 'https://drive.google.com/drive/folders/1FTWEF3Nv-DdVrEB-r9dI_ydVPCRpv3xD';
 
   const handleDownload = () => {
     setDownloadTriggered(true);
 
     try {
       confetti({
-        particleCount: 100,
-        spread: 80,
+        particleCount: 90,
+        spread: 75,
         origin: { y: 0.7 },
-        colors: ['#ffffff', '#e4e4e7', '#a1a1aa', '#71717a'],
+        colors: ['#8B5CF6', '#A78BFA', '#7C3AED', '#DDD6FE'],
       });
     } catch (e) {
       // safe fallback
     }
 
+    // Open the official APK Drive folder (replaces previous placeholder file)
     setTimeout(() => {
-      const element = document.createElement('a');
-      const file = new Blob(
-        [
-          `NEXA Android Application Package (Official Release v1.2.0)\nBuilt by Team Glitchers\nPowered by NIA — Nexa Intelligent Assistance\nSHA-256 Verified: 4f9b8c2901ef...`
-        ],
-        { type: 'text/plain' }
-      );
-      element.href = URL.createObjectURL(file);
-      element.download = 'NEXA-v1.2.0-release.apk';
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
+      window.open(APK_DRIVE_URL, '_blank', 'noopener');
+      setDownloadTriggered(false);
     }, 400);
   };
 
   return (
     <section id="download" className="py-28 md:py-40 relative overflow-hidden">
       {/* 3D Giant Glow Hemisphere */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-t from-white/[0.06] via-white/[0.015] to-transparent rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[180vw] md:w-[1100px] h-[550px] bg-gradient-to-t from-white/[0.06] via-white/[0.015] to-transparent rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main CTA Header */}
@@ -55,7 +54,7 @@ export default function DownloadSection() {
             NEXA
           </div>
 
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
             YOUR STUDENT LIFE IS <br />
             ALREADY COMPLICATED. <br />
             <span className="text-zinc-400 font-light">MANAGING IT SHOULDN'T BE.</span>
@@ -65,9 +64,9 @@ export default function DownloadSection() {
             Install NEXA today and let NIA automate your timetable, deadlines, Gmail circulars, and group expenses.
           </p>
 
-          <div className="mt-8 font-['Syncopate'] text-xl sm:text-2xl font-bold tracking-widest text-white uppercase flex items-center justify-center gap-3">
+          <div className="mt-8 font-['Space_Grotesk'] font-semibold text-xl sm:text-2xl font-bold tracking-widest text-white uppercase flex items-center justify-center gap-3">
             <span>GET NEXA</span>
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-violet-400 animate-ping motion-reduce:animate-none" />
           </div>
         </div>
 
@@ -82,7 +81,7 @@ export default function DownloadSection() {
                   <span>OFFICIAL RELEASE PACKAGE</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Syncopate']">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide font-['Space_Grotesk'] font-semibold">
                   Download Android APK
                 </h3>
 
@@ -104,10 +103,10 @@ export default function DownloadSection() {
                 <div className="pt-4 flex flex-wrap items-center gap-3">
                   <button
                     onClick={handleDownload}
-                    className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.35)] hover:scale-105"
+                    className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-xs font-semibold uppercase tracking-wider bg-violet-500 text-white hover:bg-violet-400 transition-all shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:scale-105"
                   >
                     <Download className="w-4 h-4" />
-                    <span>{downloadTriggered ? 'Downloading APK...' : 'Direct APK Download'}</span>
+                    <span>{downloadTriggered ? 'Opening Drive\u2026' : 'Download APK'}</span>
                   </button>
 
                   <button
@@ -168,15 +167,29 @@ export default function DownloadSection() {
               <QrCode className="w-6 h-6" />
             </div>
 
-            <h3 className="text-lg font-bold text-white uppercase tracking-wide mb-1 font-['Syncopate']">
+            <h3 className="text-lg font-bold text-white uppercase tracking-wide mb-1 font-['Space_Grotesk'] font-semibold">
               Scan to Install
             </h3>
             <p className="text-xs text-zinc-400 font-mono mb-6">
-              Point your phone camera to download NEXA directly.
+              {isMobileDevice
+                ? 'You are on mobile — grab the APK directly.'
+                : 'Point your phone camera to download NEXA directly.'}
             </p>
 
-            {/* Futuristic QR Display */}
-            <div className="p-4 bg-white rounded-2xl inline-block shadow-lg mx-auto">
+            {isMobileDevice && (
+              <a
+                href={APK_DRIVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-xs font-semibold uppercase tracking-wider bg-violet-500 text-white hover:bg-violet-400 transition-all shadow-[0_0_30px_rgba(139,92,246,0.5)] mb-6"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download APK</span>
+              </a>
+            )}
+
+            {/* Futuristic QR Display (desktop only — hidden on mobile) */}
+            <div className={`p-4 bg-white rounded-2xl shadow-lg mx-auto ${isMobileDevice ? 'hidden' : 'inline-block'}`}>
               <svg
                 className="w-44 h-44 text-black"
                 viewBox="0 0 100 100"

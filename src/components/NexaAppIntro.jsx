@@ -39,7 +39,7 @@ export default function NexaAppIntro() {
             THE STUDENT OPERATING SYSTEM
           </div>
 
-          <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white leading-tight">
+          <h2 className="font-['Space_Grotesk'] font-semibold text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white leading-tight">
             NIA IS THE INTELLIGENCE. <br />
             <span className="text-zinc-400 font-light text-glow">NEXA IS WHERE IT COMES TO LIFE.</span>
           </h2>
@@ -96,7 +96,7 @@ export default function NexaAppIntro() {
                   <Smartphone className="w-7 h-7" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white uppercase tracking-wider font-['Syncopate']">
+                  <h3 className="text-lg font-bold text-white uppercase tracking-wider font-['Space_Grotesk'] font-semibold">
                     Calm, Native, Spatial Architecture
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-400 font-light mt-1">

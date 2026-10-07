@@ -52,8 +52,9 @@ The website is structured following the required storytelling sequence:
 4. **DEMO VIDEO**
    - *"SEE NEXA IN ACTION"* — High-definition product demo embedded in a cinematic 3D frame with soft ambient glow (`https://youtu.be/YdRgdgZewSU`).
 
-5. **ABOUT ("BEHIND NEXA")**
-   - Meet the Builder: **Kumar Shaurya** (Founder, Designer, System Architect).
+5. **ABOUT ("BUILT BY TEAM GLITCHERS")**
+   - The Visionary Collective: **Team Glitchers** (Autonomous Cognition, Spatial Product Design, On-Device Systems, Student Privacy Architecture).
+   - "Technology designed around the way students actually live, learn and manage their day."
    - Authentic student journey, zero friction philosophy, and future roadmap.
 
 6. **DOWNLOAD NEXA**

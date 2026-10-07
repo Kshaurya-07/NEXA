@@ -1,12 +1,29 @@
 import React, { useState } from 'react';
 import { 
   User, Database, Cpu, GitFork, Sparkles, ArrowDown, 
-  Bell, FileText, TrendingUp, Lightbulb, MessageSquare, CheckSquare
+  Bell, FileText, TrendingUp, Lightbulb, MessageSquare, CheckSquare, Zap
 } from 'lucide-react';
 import Card3D from './shared/Card3D';
+import JourneyNextButton from './shared/JourneyNextButton';
 
 export default function NiaArchitecture() {
   const [activeStep, setActiveStep] = useState(2);
+  const [isAutoStepping, setIsAutoStepping] = useState(false);
+
+  const runTelemetryWalkthrough = () => {
+    setIsAutoStepping(true);
+    let step = 0;
+    setActiveStep(0);
+    const interval = setInterval(() => {
+      step++;
+      if (step < 5) {
+        setActiveStep(step);
+      } else {
+        clearInterval(interval);
+        setIsAutoStepping(false);
+      }
+    }, 900);
+  };
 
   const steps = [
     {
@@ -56,12 +73,12 @@ export default function NiaArchitecture() {
   ];
 
   return (
-    <section className="py-20 md:py-28 relative">
+    <section id="intelligence" className="py-20 md:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
-            PIPELINE ARCHITECTURE
+            STAGE 02 • UNDERSTAND THE INTELLIGENCE
           </div>
           <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             HOW NIA WORKS
@@ -69,6 +86,17 @@ export default function NiaArchitecture() {
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-light">
             A synchronized, end-to-end cognitive telemetry pipeline converting unstructured academic chaos into deterministic execution.
           </p>
+
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={runTelemetryWalkthrough}
+              disabled={isAutoStepping}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black hover:bg-zinc-200 text-xs font-mono uppercase font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] disabled:opacity-50"
+            >
+              <Zap className="w-3.5 h-3.5 fill-current" />
+              <span>{isAutoStepping ? 'Executing Pipeline Trace...' : 'Run Pipeline Simulation'}</span>
+            </button>
+          </div>
         </div>
 
         {/* 5-Step Futuristic Pipeline */}
@@ -150,6 +178,13 @@ export default function NiaArchitecture() {
             })}
           </div>
         </div>
+
+        <JourneyNextButton
+          targetId="nexa-app"
+          stageNumber="03"
+          stageTitle="Explore NEXA"
+          description="Step into the mobile-first student operating system and its 14 campus pillars."
+        />
       </div>
     </section>
   );

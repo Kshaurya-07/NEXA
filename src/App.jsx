@@ -14,6 +14,7 @@ import AboutSection from './components/AboutSection';
 import DownloadSection from './components/DownloadSection';
 import Footer from './components/Footer';
 import FloatingAssistantWidget from './components/FloatingAssistantWidget';
+import JourneyFlowGuide from './components/JourneyFlowGuide';
 import BackgroundNetwork from './components/shared/BackgroundNetwork';
 
 export default function App() {
@@ -57,6 +58,9 @@ export default function App() {
 
       {/* Persistent Floating Quick-Access Nexa HUD */}
       <FloatingAssistantWidget />
+
+      {/* Floating Interactive 7-Stage Product Journey Guide */}
+      <JourneyFlowGuide />
     </div>
   );
 }

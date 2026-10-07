@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
-import { Play, Sparkles, Monitor, Maximize2, ExternalLink } from 'lucide-react';
+import { Play, Sparkles, Monitor, Maximize2, ExternalLink, Clock, CheckCircle } from 'lucide-react';
 import Card3D from './shared/Card3D';
+import JourneyNextButton from './shared/JourneyNextButton';
 
 export default function DemoVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [activeChapter, setActiveChapter] = useState(0);
   const videoId = 'YdRgdgZewSU';
+
+  const chapters = [
+    { time: '00:15', title: 'Timetable OCR Upload', desc: 'Instant extraction of course codes, professors, and class schedules.' },
+    { time: '00:45', title: 'Gmail Notice Distiller', desc: 'Compressing complex academic emails into 3 concise action points.' },
+    { time: '01:10', title: 'Campus Bill Split', desc: '1-tap bill calculation, debt ledger syncing, and UPI settlement.' },
+    { time: '01:40', title: 'Offline Dual Engine', desc: 'Seamless sub-10ms performance even with zero campus Wi-Fi.' },
+  ];
 
   return (
     <section id="demo" className="py-20 md:py-28 relative">
@@ -12,7 +21,8 @@ export default function DemoVideo() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
-            PRODUCT WALKTHROUGH
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            STAGE 05 • WATCH THE DEMO
           </div>
           <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             SEE NEXA IN ACTION
@@ -87,6 +97,40 @@ export default function DemoVideo() {
               )}
             </div>
 
+            {/* Interactive Chapter Bookmarks */}
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2.5 text-left">
+                PRODUCT CHAPTER BOOKMARKS
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {chapters.map((chap, i) => (
+                  <button
+                    key={chap.time}
+                    onClick={() => {
+                      setActiveChapter(i);
+                      setIsPlaying(true);
+                    }}
+                    className={`p-2.5 rounded-xl border text-left transition-all ${
+                      activeChapter === i
+                        ? 'bg-white/15 border-white/40 text-white shadow-sm'
+                        : 'bg-white/[0.02] border-white/05 text-zinc-400 hover:text-white hover:bg-white/[0.05]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between text-[10px] font-mono">
+                      <span className="font-bold text-white">{chap.time}</span>
+                      <Clock className="w-3 h-3 text-zinc-500" />
+                    </div>
+                    <div className="text-xs font-semibold mt-1 text-white truncate">
+                      {chap.title}
+                    </div>
+                    <div className="text-[10px] text-zinc-400 font-mono line-clamp-1 mt-0.5">
+                      {chap.desc}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Bottom Specs Bar */}
             <div className="mt-4 pt-3 border-t border-white/05 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-400">
               <div className="flex items-center gap-2">
@@ -99,6 +143,14 @@ export default function DemoVideo() {
             </div>
           </Card3D>
         </div>
+
+        {/* Journey Transition to Stage 06 */}
+        <JourneyNextButton
+          targetId="about"
+          stageNumber="06"
+          stageTitle="Meet Team Glitchers"
+          description="Discover the engineering philosophy and creators behind NEXA and NIA."
+        />
       </div>
     </section>
   );

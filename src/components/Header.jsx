@@ -10,6 +10,7 @@ export default function Header() {
 
   const navLinks = [
     { name: 'NIA', href: '#nia', id: 'nia' },
+    { name: 'INTELLIGENCE', href: '#intelligence', id: 'intelligence' },
     { name: 'NEXA APP', href: '#nexa-app', id: 'nexa-app' },
     { name: 'FEATURES', href: '#features', id: 'features' },
     { name: 'DEMO', href: '#demo', id: 'demo' },
@@ -20,7 +21,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sectionIds = ['nia', 'nexa-app', 'features', 'demo', 'about', 'download'];
+      const sectionIds = ['nia', 'intelligence', 'nexa-app', 'features', 'demo', 'about', 'download'];
       const scrollPos = window.scrollY + 200;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {

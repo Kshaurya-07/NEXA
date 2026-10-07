@@ -4,6 +4,7 @@ import {
   ArrowRight, Play, RefreshCw, CheckCircle2, Sparkles
 } from 'lucide-react';
 import Card3D from './shared/Card3D';
+import JourneyNextButton from './shared/JourneyNextButton';
 
 export default function EverythingConnected() {
   const [activeStep, setActiveStep] = useState(0);
@@ -183,6 +184,13 @@ export default function EverythingConnected() {
             );
           })}
         </div>
+
+        <JourneyNextButton
+          targetId="demo"
+          stageNumber="05"
+          stageTitle="Watch the Demo"
+          description="See NEXA and NIA running live in the video product walkthrough."
+        />
       </div>
     </section>
   );

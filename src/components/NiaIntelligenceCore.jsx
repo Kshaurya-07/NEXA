@@ -49,6 +49,24 @@ export default function NiaIntelligenceCore() {
     },
   ];
 
+  const [isSimulating, setIsSimulating] = useState(false);
+
+  const simulatePipelineCascade = () => {
+    setIsSimulating(true);
+    let step = 0;
+    setActiveTier(0);
+    const interval = setInterval(() => {
+      step++;
+      if (step < 5) {
+        setActiveTier(step);
+      } else {
+        clearInterval(interval);
+        setIsSimulating(false);
+        setActiveTier(2); // reset to Core
+      }
+    }, 750);
+  };
+
   const handleMouseMove = (e) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
@@ -87,9 +105,20 @@ export default function NiaIntelligenceCore() {
             NIA REAL-TIME COGNITIVE ARCHITECTURE
           </span>
         </div>
-        <div className="flex items-center gap-2 font-mono text-[11px] text-zinc-400">
-          <Activity className="w-3.5 h-3.5 text-white animate-pulse" />
-          <span>DUAL-ENGINE REALTIME STREAM</span>
+        
+        <div className="flex items-center gap-3">
+          <button
+            onClick={simulatePipelineCascade}
+            disabled={isSimulating}
+            className="px-3 py-1 rounded-full bg-white text-black hover:bg-zinc-200 text-[11px] font-mono uppercase font-semibold transition-all shadow-[0_0_15px_rgba(255,255,255,0.25)] flex items-center gap-1.5 disabled:opacity-50"
+          >
+            <Zap className="w-3 h-3 fill-current" />
+            <span>{isSimulating ? 'Pulsing Data...' : 'Simulate Live Flow'}</span>
+          </button>
+          <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] text-zinc-400">
+            <Activity className="w-3.5 h-3.5 text-white animate-pulse" />
+            <span>DUAL-ENGINE ACTIVE</span>
+          </div>
         </div>
       </div>
 

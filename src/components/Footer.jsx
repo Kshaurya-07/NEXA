@@ -10,6 +10,7 @@ export default function Footer() {
 
   const navLinks = [
     { name: 'NIA', href: '#nia' },
+    { name: 'INTELLIGENCE', href: '#intelligence' },
     { name: 'NEXA APP', href: '#nexa-app' },
     { name: 'FEATURES', href: '#features' },
     { name: 'DEMO', href: '#demo' },

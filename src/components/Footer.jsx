@@ -15,6 +15,7 @@ export default function Footer() {
     { name: 'FEATURES', href: '#features' },
     { name: 'DEMO', href: '#demo' },
     { name: 'ABOUT', href: '#about' },
+    { name: 'CONTACT', href: '#contact' },
     { name: 'DOWNLOAD', href: '#download' },
   ];
 
@@ -37,7 +38,7 @@ export default function Footer() {
                   NEXA
                 </span>
                 <span className="text-[10px] uppercase font-mono tracking-[0.22em] text-zinc-400 mt-1 block">
-                  Nexa Assistant AI
+                  Nexa Intelligent AI
                 </span>
               </div>
               <span className="ml-3 text-[10px] text-zinc-400 border border-white/10 px-2.5 py-0.5 rounded-full font-mono">

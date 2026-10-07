@@ -4,7 +4,6 @@ import {
   Bell, FileText, TrendingUp, Lightbulb, MessageSquare, CheckSquare, Zap
 } from 'lucide-react';
 import Card3D from './shared/Card3D';
-import JourneyNextButton from './shared/JourneyNextButton';
 
 export default function NiaArchitecture() {
   const [activeStep, setActiveStep] = useState(2);
@@ -78,7 +77,8 @@ export default function NiaArchitecture() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
-            STAGE 02 • UNDERSTAND THE INTELLIGENCE
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            UNDERSTAND THE INTELLIGENCE
           </div>
           <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             HOW NIA WORKS
@@ -178,13 +178,6 @@ export default function NiaArchitecture() {
             })}
           </div>
         </div>
-
-        <JourneyNextButton
-          targetId="nexa-app"
-          stageNumber="03"
-          stageTitle="Explore NEXA"
-          description="Step into the mobile-first student operating system and its 14 campus pillars."
-        />
       </div>
     </section>
   );

@@ -5,7 +5,6 @@ import {
 } from 'lucide-react';
 import NiaIntelligenceCore from './NiaIntelligenceCore';
 import Card3D from './shared/Card3D';
-import JourneyNextButton from './shared/JourneyNextButton';
 
 const OFFICIAL_DOWNLOAD_URL = "https://drive.google.com/drive/folders/1FTWEF3Nv-DdVrEB-r9dI_ydVPCRpv3xD";
 
@@ -84,15 +83,15 @@ export default function HeroNia() {
                 NEXA
               </div>
               <div className="text-xs sm:text-sm font-mono uppercase tracking-[0.32em] text-zinc-400 mt-1">
-                Nexa Assistant AI
+                Nexa Intelligent AI
               </div>
             </div>
           </div>
 
           {/* Futuristic Pill with Ping Indicator */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-300 uppercase mb-8 backdrop-blur-xl shadow-[0_0_20px_rgba(255,255,255,0.06)]">
-            <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-            <span>STAGE 01 • EXPLORE NIA — THE INTELLIGENCE LAYER</span>
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+            <span>NIA — THE INTELLIGENCE LAYER</span>
           </div>
 
           {/* Huge Cinematic Futuristic Typography */}
@@ -243,14 +242,6 @@ export default function HeroNia() {
           <div className="w-full">
             <NiaIntelligenceCore />
           </div>
-
-          {/* Journey Transition to Stage 02 */}
-          <JourneyNextButton
-            targetId="intelligence"
-            stageNumber="02"
-            stageTitle="Understand the Intelligence"
-            description="Explore NIA's Dual-Engine cognition and multi-tier pipeline."
-          />
         </div>
       </div>
     </section>

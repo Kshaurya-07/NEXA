@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Play, Sparkles, Monitor, Maximize2, ExternalLink, Clock, CheckCircle } from 'lucide-react';
 import Card3D from './shared/Card3D';
-import JourneyNextButton from './shared/JourneyNextButton';
 
 export default function DemoVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -21,8 +20,8 @@ export default function DemoVideo() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            STAGE 05 • WATCH THE DEMO
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            PRODUCT WALKTHROUGH • LIVE DEMO
           </div>
           <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
             SEE NEXA IN ACTION
@@ -143,14 +142,6 @@ export default function DemoVideo() {
             </div>
           </Card3D>
         </div>
-
-        {/* Journey Transition to Stage 06 */}
-        <JourneyNextButton
-          targetId="about"
-          stageNumber="06"
-          stageTitle="Meet Team Glitchers"
-          description="Discover the engineering philosophy and creators behind NEXA and NIA."
-        />
       </div>
     </section>
   );

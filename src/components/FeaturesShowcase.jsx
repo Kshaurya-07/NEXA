@@ -72,8 +72,8 @@ export default function FeaturesShowcase() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            STAGE 04 • INTERACT WITH NEXA FEATURES
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            SPATIAL FEATURE ENGINE • INTERACTIVE 3D COCKPIT
           </div>
 
           <h2 className="font-['Syncopate'] text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-white leading-tight">

@@ -4,7 +4,6 @@ import {
   Layers, GitBranch, ArrowUpRight, Github 
 } from 'lucide-react';
 import Card3D from './shared/Card3D';
-import JourneyNextButton from './shared/JourneyNextButton';
 
 export default function AboutSection() {
   const [activeDomain, setActiveDomain] = useState('cognition');
@@ -49,8 +48,8 @@ export default function AboutSection() {
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            STAGE 06 • MEET TEAM GLITCHERS
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            ENGINEERING COLLECTIVE • TEAM GLITCHERS
           </div>
           
           <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
@@ -202,13 +201,6 @@ export default function AboutSection() {
             </Card3D>
           </div>
         </div>
-
-        <JourneyNextButton
-          targetId="download"
-          stageNumber="07"
-          stageTitle="Download NEXA"
-          description="Access the official Android APK release on Google Drive and join the future."
-        />
       </div>
     </section>
   );

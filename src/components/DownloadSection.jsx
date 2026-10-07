@@ -43,8 +43,8 @@ export default function DownloadSection() {
         {/* Main CTA Header */}
         <div className="text-center max-w-5xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-6 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            STAGE 07 • DOWNLOAD NEXA — FINAL DESTINATION
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            OFFICIAL PRODUCT DISTRIBUTION • BUILT BY TEAM GLITCHERS
           </div>
 
           {/* Official Brand Identity Lockup */}
@@ -65,7 +65,7 @@ export default function DownloadSection() {
               NEXA
             </div>
             <div className="mt-3 text-xs sm:text-sm md:text-base font-mono uppercase tracking-[0.35em] text-zinc-400">
-              Nexa Assistant AI
+              Nexa Intelligent AI
             </div>
           </div>
 

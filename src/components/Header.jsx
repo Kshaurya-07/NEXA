@@ -15,13 +15,14 @@ export default function Header() {
     { name: 'FEATURES', href: '#features', id: 'features' },
     { name: 'DEMO', href: '#demo', id: 'demo' },
     { name: 'ABOUT', href: '#about', id: 'about' },
+    { name: 'CONTACT', href: '#contact', id: 'contact' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sectionIds = ['nia', 'intelligence', 'nexa-app', 'features', 'demo', 'about', 'download'];
+      const sectionIds = ['nia', 'intelligence', 'nexa-app', 'features', 'demo', 'about', 'contact', 'download'];
       const scrollPos = window.scrollY + 200;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -80,7 +81,7 @@ export default function Header() {
                   NEXA
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.18em] text-zinc-400 font-mono -mt-0.5">
-                  Nexa Assistant AI
+                  Nexa Intelligent AI
                 </span>
               </div>
             </a>

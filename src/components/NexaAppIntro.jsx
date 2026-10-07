@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { 
   Smartphone, Mail, Calendar, CheckSquare, GraduationCap, 
   Wallet, Users, FileText, Search, MessageSquare, Bell, ArrowRight, 
-  Sparkles, Layers, ShieldCheck, IndianRupee, Clock, ArrowUpRight
+  Sparkles, Layers, ShieldCheck, IndianRupee, Clock, ArrowUpRight, Maximize2
 } from 'lucide-react';
 import Card3D from './shared/Card3D';
-import JourneyNextButton from './shared/JourneyNextButton';
+import FeatureModal from './FeatureModal';
 
 export default function NexaAppIntro() {
   const [selectedPillar, setSelectedPillar] = useState(0);
+  const [activeModal, setActiveModal] = useState(null);
 
   const ecosystemPillars = [
     { 
+      id: 'email',
       name: 'University Gmail', 
       icon: Mail, 
       tag: 'Autonomous Distillation',
@@ -23,17 +25,19 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'timetable',
       name: 'Dynamic Timetable', 
       icon: Calendar, 
       tag: 'OCR & Live Schedule',
       preview: {
         headline: 'Live Dynamic Timetable',
         snippet: 'Wednesday Schedule • Next: Operating Systems',
-        detail: '09:00 AM - 10:30 AM in LH-3 with Prof. Verma. Followed by DBMS Lab at 11:30 AM.',
+        detail: '09:00 AM - 10:30 AM in LH-1 with Dr. Prasad. Followed by DBMS Lab at 11:30 AM.',
         metric: '75% Rule Buffer: +4 Lectures Safe'
       }
     },
     { 
+      id: 'tasks',
       name: 'Academic Deadlines', 
       icon: GraduationCap, 
       tag: 'Paced Reminders',
@@ -45,6 +49,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'tasks',
       name: 'Priority Tasks', 
       icon: CheckSquare, 
       tag: 'Extremely Important',
@@ -56,6 +61,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'exams',
       name: 'Exams & Quizzes', 
       icon: GraduationCap, 
       tag: 'Weightage Tracking',
@@ -67,6 +73,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'assignments',
       name: 'Assignments', 
       icon: FileText, 
       tag: 'LMS Portal Linking',
@@ -78,6 +85,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'calendar',
       name: 'Integrated Calendar', 
       icon: Calendar, 
       tag: 'Zero Schedule Clashes',
@@ -89,6 +97,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'finance',
       name: 'Finance & Budgets', 
       icon: IndianRupee, 
       tag: 'Natural Language Logs',
@@ -100,6 +109,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'borrow',
       name: 'Borrow & Lend', 
       icon: Wallet, 
       tag: 'Transparent Ledger',
@@ -111,6 +121,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'shared_expenses',
       name: 'Shared Expenses', 
       icon: Users, 
       tag: '1-Tap Group Split',
@@ -118,10 +129,11 @@ export default function NexaAppIntro() {
         headline: 'Hostel Bill Splitter',
         snippet: 'Even and Custom Split Math',
         detail: '₹1,200 dinner split among 4 roommates = ₹300 each. Payment requests dispatched.',
-        metric: 'Zero Awkward WhatsApp Texts'
+        metric: 'Zero Awkward Texts'
       }
     },
     { 
+      id: 'documents',
       name: 'Student Documents', 
       icon: FileText, 
       tag: 'Offline PDF Store',
@@ -133,6 +145,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'search',
       name: 'Contextual Search', 
       icon: Search, 
       tag: 'Semantic Retrieval',
@@ -144,6 +157,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'chat',
       name: 'NIA AI Chat', 
       icon: MessageSquare, 
       tag: 'Live Campus Context',
@@ -155,6 +169,7 @@ export default function NexaAppIntro() {
       }
     },
     { 
+      id: 'notifications',
       name: 'Smart Notifications', 
       icon: Bell, 
       tag: 'Proactive Telemetry',
@@ -172,14 +187,14 @@ export default function NexaAppIntro() {
   return (
     <section id="nexa-app" className="py-24 md:py-32 relative overflow-hidden">
       {/* Ambient Radial Spotlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-white/[0.02] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-cyan-500/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            STAGE 03 • EXPLORE NEXA — THE STUDENT OPERATING SYSTEM
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            THE STUDENT OPERATING SYSTEM
           </div>
 
           <h2 className="font-['Syncopate'] text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white leading-tight">
@@ -188,7 +203,7 @@ export default function NexaAppIntro() {
           </h2>
 
           <p className="mt-6 text-base sm:text-lg md:text-xl text-zinc-300 font-light leading-relaxed max-w-3xl mx-auto">
-            NEXA is a <span className="text-white font-medium">spatial, mobile-first student ecosystem</span> engineered to eliminate administrative friction. Tap any of the 14 essential pillars below to inspect its live cockpit state.
+            NEXA is a <span className="text-white font-medium">spatial, mobile-first student ecosystem</span> engineered to eliminate administrative friction. Tap any of the 14 essential pillars below to inspect its live cockpit state or expand in 3D.
           </p>
         </div>
 
@@ -199,11 +214,11 @@ export default function NexaAppIntro() {
             const isSelected = selectedPillar === idx;
             return (
               <button
-                key={pillar.name}
+                key={`${pillar.name}-${idx}`}
                 onClick={() => setSelectedPillar(idx)}
                 className={`p-4 rounded-2xl border transition-all duration-300 flex flex-col items-center justify-between text-center gap-3 cursor-pointer ${
                   isSelected
-                    ? 'bg-white/20 border-white/50 shadow-[0_0_25px_rgba(255,255,255,0.2)] -translate-y-1 scale-105'
+                    ? 'bg-white/20 border-cyan-400/50 shadow-[0_0_25px_rgba(6,182,212,0.25)] -translate-y-1 scale-105'
                     : 'bg-white/[0.02] border-white/05 hover:bg-white/[0.06] hover:border-white/20'
                 }`}
               >
@@ -240,14 +255,14 @@ export default function NexaAppIntro() {
                     <img
                       src="/logo.png"
                       alt="NEXA Official Logo"
-                      className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]"
+                      className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(6,182,212,0.4)]"
                     />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white uppercase tracking-wider font-['Syncopate']">
                       NEXA COCKPIT
                     </h3>
-                    <span className="text-[10px] font-mono tracking-widest uppercase text-zinc-400">
+                    <span className="text-[10px] font-mono tracking-widest uppercase text-cyan-300">
                       PILLAR {selectedPillar + 1} OF 14 ACTIVE
                     </span>
                   </div>
@@ -258,56 +273,61 @@ export default function NexaAppIntro() {
                 </p>
 
                 <div className="pt-2">
-                  <a
-                    href="#features"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:scale-105"
+                  <button
+                    onClick={() => setActiveModal(currentPillar.id)}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:scale-105 cursor-pointer"
                   >
-                    <span>Launch 3D Feature Sandboxes</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                    <span>Launch {currentPillar.name} Overlay</span>
+                    <Maximize2 className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
 
               {/* Right Column: Live Telemetry Phone Screen for the Active Pillar */}
               <div className="md:col-span-7">
-                <div className="p-6 rounded-2xl bg-black/75 border border-white/15 text-left space-y-4 shadow-inner">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <div 
+                  onClick={() => setActiveModal(currentPillar.id)}
+                  className="p-6 rounded-2xl bg-black/75 border border-white/15 text-left space-y-4 shadow-inner cursor-pointer hover:border-cyan-400/40 transition-all group relative"
+                >
+                  <div className="absolute top-3 right-3 text-[10px] font-mono text-zinc-500 group-hover:text-cyan-300 flex items-center gap-1 transition-colors">
+                    <span>Click to expand</span>
+                    <Maximize2 className="w-3 h-3" />
+                  </div>
+
+                  <div className="flex items-center justify-between border-b border-white/10 pb-3 pr-16">
                     <div className="flex items-center gap-2 text-xs font-mono text-white">
-                      <currentPillar.icon className="w-4 h-4 text-white" />
+                      <currentPillar.icon className="w-4 h-4 text-cyan-400" />
                       <span className="font-bold uppercase tracking-wider">{currentPillar.preview.headline}</span>
                     </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-400/20 text-emerald-300 border border-emerald-400/30">
-                      {currentPillar.preview.metric}
-                    </span>
                   </div>
 
                   <div>
                     <div className="text-sm font-semibold text-white mb-2">
                       {currentPillar.preview.snippet}
                     </div>
-                    <p className="text-xs font-mono text-zinc-300 whitespace-pre-line leading-relaxed bg-white/[0.03] p-3.5 rounded-xl border border-white/05">
+                    <p className="text-xs font-mono text-zinc-300 whitespace-pre-line leading-relaxed bg-white/[0.03] p-3.5 rounded-xl border border-white/05 group-hover:border-white/10">
                       {currentPillar.preview.detail}
                     </p>
                   </div>
 
                   <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-zinc-400">
-                    <span>Active Campus Context Synced</span>
-                    <span className="text-zinc-500">Tap pillars above to switch</span>
+                    <span className="text-emerald-400 font-medium">{currentPillar.preview.metric}</span>
+                    <span className="text-cyan-400 flex items-center gap-1">
+                      <span>Open 3D Detail</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </Card3D>
         </div>
-
-        {/* Journey Transition to Stage 04 */}
-        <JourneyNextButton
-          targetId="features"
-          stageNumber="04"
-          stageTitle="Interact with Features"
-          description="Deep-dive into live interactive sandboxes for Finance, OCR Timetable, Tasks, and Ledgers."
-        />
       </div>
+
+      {/* Feature Contextual 3D Overlay */}
+      {activeModal && (
+        <FeatureModal featureId={activeModal} onClose={() => setActiveModal(null)} />
+      )}
     </section>
   );
 }

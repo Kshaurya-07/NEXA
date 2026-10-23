@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   User, Database, Cpu, GitFork, Sparkles, ArrowDown, 
   Bell, FileText, TrendingUp, Lightbulb, MessageSquare, CheckSquare, Zap
@@ -8,17 +8,26 @@ import Card3D from './shared/Card3D';
 export default function NiaArchitecture() {
   const [activeStep, setActiveStep] = useState(2);
   const [isAutoStepping, setIsAutoStepping] = useState(false);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
 
   const runTelemetryWalkthrough = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
     setIsAutoStepping(true);
     let step = 0;
     setActiveStep(0);
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       step++;
       if (step < 5) {
         setActiveStep(step);
       } else {
-        clearInterval(interval);
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
         setIsAutoStepping(false);
       }
     }, 900);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Mail, Brain, AlertCircle, CheckSquare, Calendar, Bell, 
   ArrowRight, Play, RefreshCw, CheckCircle2, Sparkles
@@ -8,6 +8,13 @@ import Card3D from './shared/Card3D';
 export default function EverythingConnected() {
   const [activeStep, setActiveStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
 
   const pipeline = [
     {
@@ -61,16 +68,18 @@ export default function EverythingConnected() {
   ];
 
   const handleRunCascade = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
     setIsPlaying(true);
     setActiveStep(0);
 
     let step = 0;
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       step++;
       if (step < pipeline.length) {
         setActiveStep(step);
       } else {
-        clearInterval(interval);
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
         setIsPlaying(false);
       }
     }, 1100);

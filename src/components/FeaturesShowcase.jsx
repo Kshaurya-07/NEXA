@@ -336,12 +336,26 @@ export default function FeaturesShowcase() {
           </div>
 
           {/* Right Column: 3D Smartphone Device Mockup with Spatial Floating HUD */}
-          <div className="lg:col-span-6 flex justify-center perspective-1000">
+          <div className="lg:col-span-6 flex justify-center perspective-1000 relative">
+            {/* Surrounding 3D Floating Geometry & Orbital Rings (Section 8) */}
+            <div className="absolute -top-10 -right-8 w-44 h-44 rounded-full border border-cyan-500/15 border-dashed animate-[spin_25s_linear_infinite] pointer-events-none hidden sm:block" />
+            <div className="absolute -bottom-10 -left-8 w-48 h-48 rounded-full border border-white/08 animate-[spin_18s_linear_infinite_reverse] pointer-events-none hidden sm:block" />
+            
+            {/* Floating Spatial Micro-chips around phone */}
+            <div className="absolute top-12 -left-6 hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/85 border border-cyan-400/30 text-[9px] font-mono text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.25)] backdrop-blur-md pointer-events-none z-30">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              <span>LIVE SENSORY STREAM</span>
+            </div>
+            <div className="absolute bottom-20 -right-8 hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/85 border border-emerald-400/30 text-[9px] font-mono text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)] backdrop-blur-md pointer-events-none z-30">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>75% MANDATE BUFFER</span>
+            </div>
+
             <div
               ref={phoneRef}
               onMouseMove={handlePhoneMove}
               onMouseLeave={handlePhoneLeave}
-              className="relative w-full max-w-[340px] sm:max-w-[360px] rounded-[50px] p-3.5 bg-gradient-to-b from-[#2a2a38] via-[#151520] to-[#0c0c14] border-2 border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_50px_rgba(255,255,255,0.08)] transition-transform duration-150 ease-out"
+              className="relative w-full max-w-[340px] sm:max-w-[360px] rounded-[50px] p-3.5 bg-gradient-to-b from-[#2a2a38] via-[#151520] to-[#0c0c14] border-2 border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_50px_rgba(255,255,255,0.08)] transition-transform duration-150 ease-out z-10"
               style={{
                 transform: `perspective(1000px) rotateX(${phoneTilt.x.toFixed(2)}deg) rotateY(${phoneTilt.y.toFixed(2)}deg)`,
                 transformStyle: 'preserve-3d',

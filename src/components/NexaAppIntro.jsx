@@ -244,9 +244,23 @@ export default function NexaAppIntro() {
           })}
         </div>
 
-        {/* Dynamic 3D Spatial Cockpit Preview Screen */}
-        <div className="mt-14 max-w-4xl mx-auto">
-          <Card3D depth={12} className="p-6 sm:p-10 bg-[#090912]/95 border-white/20 shadow-2xl">
+        {/* Dynamic 3D Spatial Cockpit Preview Screen with Surrounding 3D Elements */}
+        <div className="mt-14 max-w-4xl mx-auto relative">
+          {/* Surrounding 3D Spatial Floating Halos & Orbital Wireframe Accents */}
+          <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full border border-cyan-500/20 border-dashed animate-[spin_20s_linear_infinite] pointer-events-none hidden sm:block" />
+          <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full border border-white/10 animate-[spin_15s_linear_infinite_reverse] pointer-events-none hidden sm:block" />
+
+          {/* Floating Spatial Micro-Node Chips around device */}
+          <div className="absolute -top-4 left-6 hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/85 border border-cyan-400/30 text-[9px] font-mono text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.2)] backdrop-blur-md pointer-events-none z-20">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+            <span>SUB-10MS LOCAL COGNITION</span>
+          </div>
+          <div className="absolute -bottom-4 right-8 hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/85 border border-emerald-400/30 text-[9px] font-mono text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.2)] backdrop-blur-md pointer-events-none z-20">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            <span>ZERO-KNOWLEDGE PRIVACY</span>
+          </div>
+
+          <Card3D depth={12} className="p-6 sm:p-10 bg-[#090912]/95 border-white/20 shadow-2xl relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               {/* Left Column: Brand Lockup & Specs */}
               <div className="md:col-span-5 text-left space-y-4">

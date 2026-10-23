@@ -819,6 +819,25 @@ export default function FeatureModal({ featureId, onClose }) {
             </div>
           )}
 
+          {/* Fallback if featureId does not match known categories */}
+          {![
+            'finance', 'budgets', 'timetable', 'academic', 'calendar', 'exams', 'assignments',
+            'tasks', 'email', 'mail', 'borrow', 'shared_expenses', 'shared expenses',
+            'search', 'documents', 'chat', 'ai', 'hud', 'notifications'
+          ].includes(featureId) && (
+            <div className="py-12 text-center space-y-4 font-mono animate-fadeIn">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-cyan-400 mx-auto border border-white/15">
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-white font-['Syncopate'] uppercase">
+                {String(featureId || 'Feature').replace(/_/g, ' ')} Cockpit
+              </h3>
+              <p className="text-xs text-zinc-400 max-w-md mx-auto font-light leading-relaxed">
+                Autonomous student context and real-time reasoning are online for this module.
+              </p>
+            </div>
+          )}
+
         </div>
       </div>
     </div>

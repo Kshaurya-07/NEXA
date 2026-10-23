@@ -50,6 +50,10 @@ export default function DownloadSection() {
           {/* Official Brand Identity Lockup */}
           <div className="flex flex-col items-center justify-center mb-8">
             <div className="relative group mb-5">
+              {/* Outer 3D orbital halo rings */}
+              <div className="absolute -inset-6 rounded-full border border-cyan-500/20 border-dashed animate-[spin_25s_linear_infinite] pointer-events-none" />
+              <div className="absolute -inset-10 rounded-full border border-amber-500/15 animate-[spin_18s_linear_infinite_reverse] pointer-events-none" />
+
               <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 via-white/20 to-amber-500/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-all duration-700 animate-pulse" />
               <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl p-3 bg-black/90 border border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(255,255,255,0.15)] flex items-center justify-center backdrop-blur-2xl">
                 <img

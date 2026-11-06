@@ -2,6 +2,8 @@
 
 A mobile-first student assistant platform for academic life, powered by NIA (Nexa Intelligent Assistance).
 
+> Less remembering. Less searching. Less switching. More doing.
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -17,42 +19,46 @@ A mobile-first student assistant platform for academic life, powered by NIA (Nex
 
 ## Overview
 
-University students often manage academic information across many places: group chats, university portal notices, schedule screenshots, drive folders, and note apps. NEXA is intended to bring schedules, syllabi, finances, and institutional notices into one student-facing platform, with the aim of reducing the time spent remembering, searching, and switching between tools.
+University students manage academic information across many places: group chats, university portal notices, schedule screenshots, drive folders, and note apps. Deadlines get missed, attendance slips, and group finances create unnecessary friction.
 
-The original README describes NEXA with the tagline: "Less remembering. Less searching. Less switching. More doing."
+NEXA brings schedules, syllabi, finances, and institutional notices into one student-facing platform. The goal is simple: spend less time remembering, searching, and switching between tools, and more time doing the work that matters.
 
 ## NEXA and NIA
 
-- **NIA** is described in the original README as the intelligence layer: it reads syllabi and notices, helps track attendance and tasks, and suggests schedule adjustments.
-- **NEXA** is the platform and interface where NIA is presented: a mobile-first interface, calendar, finance tools, and a cockpit-style overview.
+NEXA and NIA are two parts of the same product:
 
-The original README describes two operating modes:
+- **NIA (Nexa Intelligent Assistance)** is the intelligence layer. It reads syllabi and notices, distils long circulars into clear actions, tracks attendance and tasks, and suggests schedule adjustments.
+- **NEXA** is the platform and interface where NIA lives: a mobile-first interface with a calendar, finance tools, and a cockpit-style overview of academic life.
 
-- **Connected mode:** cloud-based reasoning and document extraction when a network connection is available.
-- **On-device mode:** local timetable lookups, schedule queries, and an offline action queue when connectivity is limited.
+### Two modes
 
-Performance figures mentioned in the original README, such as sub-10ms local execution, are presented here as design goals described in that README, not as independently verified measurements.
+NIA is designed to work in two modes, depending on connectivity:
+
+- **Connected mode:** cloud-based reasoning and document extraction when a network connection is available, including multimodal reasoning, OCR for timetables and syllabi, and structured action tools.
+- **On-device mode:** local timetable lookups, schedule queries, and an offline action queue when connectivity is limited, so core academic information remains available without internet access.
+
+Performance figures such as sub-10 ms local execution are design goals for the on-device mode, not independently verified measurements.
 
 ## Features
 
-The original README lists 14 areas of student life that NEXA aims to cover:
+NEXA covers 14 areas of student life in one platform:
 
-1. University email and notice summaries
-2. Timetable and schedule tracking, including room and professor details
-3. Attendance tracking, including calculations for remaining safe absences under a 75% rule
-4. Task management and deadlines
-5. Exam countdown and hall ticket information
-6. Assignment and lab report tracking
-7. Academic calendar sync
-8. Campus spend logging
-9. Monthly budget pacing
-10. Borrow and lend ledger
-11. Shared bill splitting
-12. Document and notes storage
-13. Search across emails, notes, tasks, and timetables
-14. Proactive notifications
+1. **University email and notice summaries** — long administrative circulars distilled into short, actionable points.
+2. **Timetable and schedule tracking** — class schedules with room numbers, professor details, and next-class countdowns.
+3. **Attendance tracking** — live attendance percentages, including calculations for remaining safe absences under a 75% rule.
+4. **Task management and deadlines** — priority-ranked tasks with study planning around free periods.
+5. **Exam countdown and hall ticket information** — exam dates, guidelines, and seat allocation details in one place.
+6. **Assignment and lab report tracking** — multi-course assignments with deadline countdowns and submission reminders.
+7. **Academic calendar sync** — semester breaks, holidays, and assessment dates.
+8. **Campus spend logging** — natural-language expense logging with automatic categorisation.
+9. **Monthly budget pacing** — a visual view of spending against a daily allowance.
+10. **Borrow and lend ledger** — a clear record of who owes what, to avoid awkward conversations about money.
+11. **Shared bill splitting** — group dining and room expenses split per person, with UPI settlement.
+12. **Document and notes storage** — central storage for ID cards, hall tickets, and syllabus PDFs.
+13. **Search across emails, notes, tasks, and timetables** — one search across the whole platform.
+14. **Proactive notifications** — timely, non-intrusive alerts, such as a class starting in ten minutes.
 
-Additional interface elements described in the original README include a 3D-style cockpit presentation, timetable OCR simulation, a bill splitter, task completion views, and a canvas-based background environment.
+The interface also includes a 3D-style cockpit presentation, a timetable OCR simulator, a live bill splitter, task completion views, and a canvas-based background environment.
 
 ## Tech Stack
 
@@ -61,15 +67,15 @@ Additional interface elements described in the original README include a 3D-styl
 | Frontend framework | React 18 |
 | Build tool | Vite 5 |
 | Styling | Tailwind CSS 3.4 |
-| Graphics | HTML5 Canvas 2D, with custom 3D projection as described in the original README |
+| Graphics | HTML5 Canvas 2D, with custom 3D projection |
 | Icons | Lucide React |
-| Typography | Syncopate, JetBrains Mono / Space Mono, as described in the original README |
+| Typography | Syncopate, JetBrains Mono / Space Mono |
 
-NEXA was built by Team Glitchers, as described in the original README. The team organisation link from the original README is: https://github.com/kunal4060/GLITCHERS
+NEXA was built by Team Glitchers: https://github.com/kunal4060/GLITCHERS
 
 ## Project Structure
 
-The project is a Vite and React application. The structure below is a condensed summary of the layout described in the original README.
+The project is a Vite and React application.
 
 ```text
 NEXA/
@@ -87,7 +93,7 @@ NEXA/
 └── README.md
 ```
 
-Components described in the original README include shared canvas and card components, feature showcases, architecture views, contact and download sections, and navigation and footer components.
+Components include shared canvas and card components, feature showcases, architecture views, contact and download sections, and navigation and footer components.
 
 ## Getting Started
 
@@ -116,12 +122,12 @@ npm run preview
 
 ## Deployment
 
-The original README describes deployment as a static site, including Render, Vercel, and Netlify options. In each case, the standard build output is used:
+NEXA deploys as a static site. The standard build output is used on Render, Vercel, and Netlify:
 
 - Build command: `npm run build`
 - Publish directory: `dist`
 
-For Render, the original README names the service `nexa-assistant-ai` and the `main` branch. For Vercel and Netlify, use the platform's import flow for this repository and the same build and publish settings.
+For Render, the service is named `nexa-assistant-ai` and uses the `main` branch. For Vercel and Netlify, use the platform's import flow for this repository with the same build and publish settings.
 
 ## Contributing
 

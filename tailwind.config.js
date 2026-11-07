@@ -38,8 +38,13 @@ export default {
         'pulse-subtle': 'pulseGlow 5s ease-in-out infinite',
         'spin-slow': 'spin 24s linear infinite',
         'shimmer': 'shimmer 2.5s ease-in-out infinite',
+        'fadeIn': 'fadeIn 0.3s ease-out',
       },
       keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },

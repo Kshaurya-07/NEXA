@@ -14,6 +14,7 @@ A mobile-first student assistant platform for academic life, powered by NIA (Nex
 - [Getting Started](#getting-started)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
+- [Links](#links)
 - [License](#license)
 - [Author](#author)
 

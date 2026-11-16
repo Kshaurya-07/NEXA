@@ -14,7 +14,6 @@ A mobile-first student assistant platform for academic life, powered by NIA (Nex
 - [Getting Started](#getting-started)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
-- [Links](#links)
 - [License](#license)
 - [Author](#author)
 
@@ -65,11 +64,12 @@ The interface also includes a 3D-style cockpit presentation, a timetable OCR sim
 
 | Category | Technology |
 | --- | --- |
-| Frontend framework | React 18 |
-| Build tool | Vite 5 |
-| Styling | Tailwind CSS 3.4 |
+| Frontend framework | React 18.3 |
+| Build tool | Vite 5.4 |
+| Styling | Tailwind CSS 3.4.17 |
 | Graphics | HTML5 Canvas 2D, with custom 3D projection |
-| Icons | Lucide React |
+| Icons | Lucide React 0.475 |
+| Effects | canvas-confetti 1.9 |
 | Typography | Syncopate, JetBrains Mono / Space Mono |
 
 NEXA was built by Team Glitchers: https://github.com/kunal4060/GLITCHERS
@@ -125,10 +125,10 @@ npm run preview
 
 NEXA deploys as a static site. The standard build output is used on Render, Vercel, and Netlify:
 
-- Build command: `npm run build`
-- Publish directory: `dist`
+- Build command: `npm install && npm run build`
+- Publish directory: `./dist`
 
-For Render, the service is named `nexa-assistant-ai` and uses the `main` branch. For Vercel and Netlify, use the platform's import flow for this repository with the same build and publish settings.
+For Render, the service is named `nexa-website` (see `render.yaml`) and uses the `main` branch. The static site rewrites all routes to `/index.html`, so client-side routing works on refresh and deep links. For Vercel and Netlify, use the platform's import flow for this repository with the same build and publish settings.
 
 ## Contributing
 
